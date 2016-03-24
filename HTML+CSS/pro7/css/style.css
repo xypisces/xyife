@@ -507,6 +507,7 @@ button:focus{
 	text-align: center;
 }
 .form-join>.form-group{
+	
 	float: left;
 	display: flex;
 	padding: 10px 0;
@@ -519,6 +520,17 @@ button:focus{
 	line-height: 21px;
 }
 .form-join>.form-group>.value{
+	background-color: #eee;
+	height: 35px;
+	margin: 0 20px;
+	flex: 1;
+	border-radius: 3px;
+	border: 1px solid #E1E8ED;
+	transition: .3s;
+}
+.form-join>.form-group>.value1{
+	background-color: #eee;
+	
 	margin: 0 20px;
 	flex: 1;
 	border-radius: 3px;
@@ -536,16 +548,7 @@ button:focus{
 .form-join>.form-group-dream>.key{
 	width: 130px;
 }
-.submit-btn{
-	width: 70px;
-	height: 20px;
-	line-height: 193%;
-	background-color: transparent;
-	border: 0;
-	font-weight: bold;
-	margin-top: 100px;
-	display: inline-block;
-}
+
 /*connect-us*/
 .connect-us{
 	height: 360px;
