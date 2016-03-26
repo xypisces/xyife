@@ -1,3 +1,2 @@
 # xyife
-just about ife </br>
-this branches is about project 3
+just about ife practice</br>
