@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://netclub.github.io/ife2016spring/task_18/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>队列的添加和删除</title>
+	<style>
+		li {
+			display: inline-block;
+			background-color: blue;
+			color: white;
+			padding-left: 8px;
+			padding-right: 8px;
+			height: 40px;
+			width: 30px;
+			margin-right: 10px;
+			text-align: center;
+			line-height: 40px;
+			cursor: pointer;
+		}
+		#screen{
+			height: 20px;			
+		}
+		.btn{
+			height: 40px;
+			border-radius: 10%;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="ctrl">
+		<input type="text" id="screen">
+		<input type="button" class="btn" value="左侧入">
+		<input type="button" class="btn" value="右侧入">
+		<input type="button" class="btn" value="左侧出">
+		<input type="button" class="btn" value="右侧出"> </div>
+	<div class="box">
+		<ul></ul>
+	</div>
+	<script>
+		var screen = document.getElementById('screen');
+		var btn = document.getElementsByClassName('btn');
+		var ul = document.getElementsByTagName('ul')[0];
+		btn[0].onclick = function () {
+			if (screen.value.length <= 0) {
+				alert('输入为空');
+				return false;
+			}
+			var newNode = document.createElement('li');
+			newNode.innerHTML = screen.value;
+			ul.insertBefore(newNode, ul.firstChild);
+			screen.value = null;
+		}
+		btn[1].onclick = function () {
+			if (screen.value.length <= 0) {
+				alert('输入为空');
+				return false;
+			}
+			var newNode = document.createElement('li');
+			newNode.innerHTML = screen.value;
+			ul.appendChild(newNode);
+			screen.value = null;
+		}
+		btn[2].onclick = function () {
+			if (ul.hasChildNodes()) {
+				
+				ul.removeChild(ul.firstChild);
+			} else {
+				alert('队列为空');
+				return false;
+			}
+		}
+		btn[3].onclick = function () {
+			if (ul.hasChildNodes()) {
+				
+				ul.removeChild(ul.lastChild);
+			} else {
+				alert('队列为空');
+				return false;
+			}
+		}
+		ul.onmouseover = function () {
+			var li = ul.getElementsByTagName('li');
+			for (var i in li) {
+				li[i].index = i;
+				li[i].onclick = function () {
+					ul.removeChild(ul.childNodes[this.index]);
+				}
+			}
+		}
+	</script>
+
+
+
+
+</body></html>
