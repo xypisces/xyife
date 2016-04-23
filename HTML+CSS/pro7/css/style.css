@@ -257,7 +257,7 @@ button:focus{
 	color: #A8A9AA;
 	border:1px solid #C17870;
 }
-.select-wrap::before{
+.select-wrap-before{
 	content: "﹀";
 	display: inline-block;
 	width: 19px;
